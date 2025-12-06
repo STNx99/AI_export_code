@@ -1,13 +1,13 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import json
-from htmlexport import generate_html_project
-from reactjsexport import generate_react_project
-from angularexport import generate_angular_project
-from vueexport import generate_vue_project
+from AI_export_code.components.htmlExport.htmlexport import generate_html_project
+from AI_export_code.components.reactJSExport.reactjsexport import generate_react_project
+from AI_export_code.components.angularExporrt.angularexport import generate_angular_project
+from AI_export_code.components.vueExport.vueexport import generate_vue_project
 import os
 import torch
-from train import Autoencoder
+from AI_export_code.trainModel.train.train import Autoencoder
 
 app = Flask(__name__)
 CORS(app)
@@ -142,4 +142,4 @@ def health():
 if __name__ == "__main__":
     print(f"{Color.BLUE}🚀 AI Server starting...{Color.END}")
     print(f"{Color.GREEN}Model loaded: vocab_size={checkpoint['vocab_size']}{Color.END}")
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5001, debug=True)
