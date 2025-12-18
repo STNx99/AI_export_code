@@ -1,13 +1,13 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import json
-from AI_export_code.components.htmlExport.htmlexport import generate_html_project
-from AI_export_code.components.reactJSExport.reactjsexport import generate_react_project
-from AI_export_code.components.angularExporrt.angularexport import generate_angular_project
-from AI_export_code.components.vueExport.vueexport import generate_vue_project
+from components.htmlExport.htmlexport import generate_html_project
+from components.reactJSExport.reactjsexport import generate_react_project
+from components.angularExport.angularexport import generate_angular_project
+from components.vueExport.vueexport import generate_vue_project
 import os
 import torch
-from AI_export_code.trainModel.train.train import Autoencoder
+from trainModel.train.train import Autoencoder
 
 app = Flask(__name__)
 CORS(app)
